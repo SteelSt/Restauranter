@@ -50,17 +50,18 @@ namespace Restauranter.Controllers
                 _context.Add(NewReview);
                 // OR _context.Users.Add(NewPerson);
                 _context.SaveChanges();
-                return View("Reviews");
+                List<Review> AllTheReviews =   _context.reviews.OrderBy(p => p.ReviewDate).ToList();
+                return View("Reviews", AllTheReviews);
             }
             return View("Index");
         }
 
-        public IActionResult Reviews()
-        {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
-        }
+        // public IActionResult Reviews()
+        // {
+            // List<Review> AllTheReviews =   _context.reviews.ToList();
+            // ViewBag.AllReviews = AllTheReviews;
+            // return View(AllTheReviews);
+        // }
 
         public IActionResult Contact()
         {

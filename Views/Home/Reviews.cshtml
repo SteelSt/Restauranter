@@ -1,7 +1,12 @@
 ﻿@{
     ViewData["Title"] = "About";
 }
-<h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
+@model List<Review>
 
-<p>Use this area to provide additional information.</p>
+@foreach(Review review in Model)
+{
+    <h1>Review For: @review.RestaurantName - @review.Rating star</h1>
+    <h3>Reviewer: @review.ReviewerName, @review.ReviewDate.ToString("MMM dd, yyyy")</h3>
+    <h4>@review.UserReview</h4>
+    <hr>
+}

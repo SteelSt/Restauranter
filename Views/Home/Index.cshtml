@@ -22,8 +22,8 @@
     <span asp-validation-for="Rating" class="text-danger"></span>
     <br>
     <label asp-for="ReviewDate"></label>
-    <input asp-for="ReviewDate" class="form-control">
+    <input asp-for="ReviewDate" class="form-control" type="date" max='@DateTime.Now.ToString("dd/MM/yyyy")'>
     <span asp-validation-for="ReviewDate" class="text-danger"></span>
     <br>
-    <input type="submit" class="btn btn-primary btn-lg" id="submitbtn" value="Create Record!">
+    <input type="submit" class="btn btn-primary btn-lg" id="submitbtn" value="Submit">
 </form>
